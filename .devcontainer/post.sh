@@ -7,7 +7,7 @@ set -x
     echo "export ROS_VERSION=2"
     echo "export ROS_PYTHON_VERSION=3"
     echo "export ROS_DISTRO=humble"
-    echo "export ROS_SECURITY_KEYSTORE=/workspaces/imp-core/.ros_security/demo_keystore"
+    echo "export ROS_SECURITY_KEYSTORE=/workspaces/Modern_ROS2_Workspace/.ros_security/demo_keystore"
     echo "export ROS_SECURITY_ENABLE=true"
     echo "export ROS_SECURITY_ENCLAVE_OVERRIDE=/dev_environment_shared"
     echo "export ROS_SECURITY_STRATEGY=Enforce" # See https://design.ros2.org/articles/ros2_dds_security.html;
@@ -24,7 +24,7 @@ set -x
     echo "export ROS_VERSION=2"
     echo "export ROS_PYTHON_VERSION=3"
     echo "export ROS_DISTRO=humble"
-    echo "export ROS_SECURITY_KEYSTORE=/workspaces/imp-core/.ros_security/demo_keystore"
+    echo "export ROS_SECURITY_KEYSTORE=/workspaces/Modern_ROS2_Workspace/.ros_security/demo_keystore"
     echo "export ROS_SECURITY_ENABLE=true"
     echo "export ROS_SECURITY_ENCLAVE_OVERRIDE=/dev_environment_shared"
     echo "export ROS_SECURITY_STRATEGY=Enforce" # See https://design.ros2.org/articles/ros2_dds_security.html;

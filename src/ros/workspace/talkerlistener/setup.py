@@ -13,7 +13,7 @@ setup(
     install_requires=["setuptools"],
     zip_safe=True,
     maintainer="vscode",
-    maintainer_email="jakkaj@gmail.com",
+    maintainer_email="dasiths@hotmail.com",
     description="TODO: Package description",
     license="TODO: License declaration",
     tests_require=["pytest"],

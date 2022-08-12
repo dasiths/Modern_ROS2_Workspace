@@ -9,7 +9,7 @@
         "/opt/ros/humble/local/lib/python3.10/dist-packages"
     ],
     "python.testing.pytestArgs": [
-        "src/ros/imp-ros"
+        "src/ros"
     ],
     "python.testing.autoTestDiscoverOnSaveEnabled": true,
     "python.testing.unittestEnabled": false,
@@ -18,6 +18,6 @@
     "python.linting.pylintEnabled": false,
     "python.linting.flake8Enabled": true,
     "python.linting.flake8Args": [
-        "--append-config=src/ros/imp-ros/setup.cfg"
+        "--append-config=.flake8"
     ]
 }

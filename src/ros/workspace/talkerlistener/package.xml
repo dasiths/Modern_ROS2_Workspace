@@ -4,7 +4,7 @@
   <name>talkerlistener</name>
   <version>0.0.0</version>
   <description>TODO: Package description</description>
-  <maintainer email="jakkaj@gmail.com">vscode</maintainer>
+  <maintainer email="dasiths@hotmail.com">vscode</maintainer>
   <license>TODO: License declaration</license>
 
   <test_depend>python3-pytest</test_depend>
