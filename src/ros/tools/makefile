@@ -48,3 +48,11 @@ listen-topic:
 	else\
 		ros2 topic echo $(topic);\
 	fi
+
+observe-discovery-traffic:
+# See https://docs.ros.org/en/foxy/Concepts/About-Domain-ID.html#domain-id-to-udp-port-calculator for port range
+	sudo tcpdump -X -i any udp port 7400
+
+observe-data-traffic:
+# See https://docs.ros.org/en/foxy/Concepts/About-Domain-ID.html#domain-id-to-udp-port-calculator for port range
+	sudo tcpdump -i any -X udp portrange 7401-7500

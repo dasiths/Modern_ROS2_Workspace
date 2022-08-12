@@ -37,6 +37,7 @@ set -x
 sudo apt update
 sudo rosdep init
 rosdep update -y
+sudo apt install tcpdump
 
 set +x
 
