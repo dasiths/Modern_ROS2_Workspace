@@ -1,0 +1,9 @@
+ARG REGISTRY=your-registry.azureacr.io/
+FROM ${REGISTRY}rosbase:latest
+
+USER ubuntu
+
+ARG PACKAGE
+COPY --chown=ubuntu . .
+RUN cd /${PACKAGE} && make rosbuild
+CMD ["/bin/bash", "-c", "--",  "while true; do sleep 30; done;"]

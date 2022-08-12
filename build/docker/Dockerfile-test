@@ -1,0 +1,16 @@
+ARG REGISTRY=your-registry.azureacr.io/
+FROM ${REGISTRY}rosbase:latest
+
+RUN sudo apt-get update && export DEBIAN_FRONTEND=noninteractive && \
+    sudo apt-get install -y python3-pytest python3-pytest-cov python3-pytest-repeat python3-pytest-rerunfailures && \
+    sudo rm -rf /var/lib/apt/lists/*
+
+RUN sudo apt-get update
+RUN rosdep update
+
+USER ubuntu
+
+ARG PACKAGE
+COPY --chown=ubuntu . .
+RUN cd /${PACKAGE} && make rosbuild
+CMD ["/bin/bash", "-c", "--",  "while true; do sleep 30; done;"]

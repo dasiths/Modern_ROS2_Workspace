@@ -1,0 +1,23 @@
+FROM ros:humble-ros-base-jammy
+
+RUN sed -i 's/archive\.ubuntu\.com/au.archive.ubuntu.com/g' /etc/apt/sources.list
+
+RUN apt-get update && export DEBIAN_FRONTEND=noninteractive && \
+	apt-get install -y python3-colcon-common-extensions python3-pip python3-rosdep ros-humble-fastrtps ros-humble-rmw-fastrtps-cpp && \
+    rm -rf /var/lib/apt/lists/*
+
+ARG UID=1000
+ENV USER="ubuntu"
+RUN useradd -u $UID -ms /bin/bash $USER
+RUN usermod -aG sudo ubuntu
+RUN echo "ubuntu  ALL=(ALL) NOPASSWD:ALL" | sudo tee /etc/sudoers.d/ubuntu
+USER 1000
+
+RUN echo "source /opt/ros/humble/setup.bash" >> ~/.bashrc
+
+RUN sudo apt-get update
+RUN rosdep update
+
+COPY --chown=ubuntu ./scripts/liveness.sh /liveness.sh
+
+CMD ["/bin/bash", "-c", "--",  "while true; do sleep 30; done;"]
