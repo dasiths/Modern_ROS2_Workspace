@@ -4,7 +4,7 @@ This folder contains a base docker file which you can use to test and build the 
 
 ## Testing
 
-Example CI
+Example Azure DevOps Pipeline CI
 
 ```yaml
 - stage: tests

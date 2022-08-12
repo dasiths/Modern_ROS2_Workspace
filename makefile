@@ -14,8 +14,8 @@ test-%:
 	cd src/ros/workspace/$* &&\
 	make test
 
-lint:
-	flake8 .
+lint-all:
+	flake8 --append-config=.flake8 .
 
 local-build-all:
 	echo building multiple containers;\
