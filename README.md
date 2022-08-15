@@ -6,6 +6,8 @@ This devcontainer is based on Jammy (Linux LTS 22.04) and ROS2 Humble Hawksbill 
 
 This repo also has some scripts and dockerfiles you can use for your CI pipeline. See the [Build](./build/README.md) folder.
 
+**This repo will move to the AzureSamples org shortly as it can be better supported there.**
+
 ## Opinions
 
 This repo contains a lot of opinions and they may or may not work for your specific scenario. This meant to be an example rather than an all encompassing template.
@@ -46,3 +48,14 @@ Details about ROS2 DDS Security here <https://design.ros2.org/articles/ros2_dds_
 
 - Introduce VS Code tasks to make makefile target discovery easier.
 - Add sample using `launch` and reading `config` from environment.
+
+## Notes
+
+This repo contains some generic examples from the ROS2 github repos. The devcontainer, folder structure, make targets and example build pipeline are examples only. They have not been tested thoroughly.
+
+Contributors:
+- Dasith Wijesiriwardena
+- Jordan Knight
+- Juan Burckhardt
+- Jason Goodsell
+- Sunganya Srinivasan
