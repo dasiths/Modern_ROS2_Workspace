@@ -36,7 +36,8 @@
         "saekiraku.pin-up",
         "timonwong.shellcheck",
         "maciejdems.terminal-sync",
-        "ms-iot.vscode-ros"
+        "ms-iot.vscode-ros",
+        "streetsidesoftware.code-spell-checker"
     ],
 	"settings": {
         "files.insertFinalNewline": true,
