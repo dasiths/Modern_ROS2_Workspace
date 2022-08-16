@@ -35,7 +35,7 @@ Example Azure DevOps Pipeline CI
       inputs:
         codeCoverageTool: Cobertura
         summaryFileLocation: '**/test-results/*coverage*.xml'
-        pathToSources: "$(Build.Repository.LocalPath)/packages"
+        pathToSources: "$(Build.Repository.LocalPath)/src/ros/workspace"
         failIfCoverageEmpty: false
 ```
 
@@ -44,7 +44,7 @@ Example Azure DevOps Pipeline CI
 To Run the CI build you can do
 
 ```bash
-./package/prepare.sh ${nextRelease.version}
+./build/package/prepare.sh ${nextRelease.version}
 ```
 
 Once built, the image is tagged and stored in a container repository. You can then use it with any container orchestration engine of your choice.

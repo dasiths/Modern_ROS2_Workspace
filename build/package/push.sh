@@ -14,12 +14,12 @@ else
   docker buildx create --use --name impbuildx
 fi
 
-docker buildx build --platform linux/amd64,linux/arm64 -t "$REGISTRY"rosbase:latest -f ./docker/Dockerfile-base . --push
+docker buildx build --platform linux/amd64,linux/arm64 -t "$REGISTRY"rosbase:latest -f ./build/docker/Dockerfile-base . --push
 
-packages=$(ls workspace)
+packages=$(ls src/ros/workspace)
 for package in $packages; do
   echo "Building and pushing cross/platform $package"
   cd src/ros/workspace || exit
-  docker buildx build --platform linux/amd64,linux/arm64 -t "$REGISTRY$package:$version" --build-arg REGISTRY="$REGISTRY" --build-arg PACKAGE="$package" -f ../docker/Dockerfile-build . --push
-  cd .. || exit
+  docker buildx build --platform linux/amd64,linux/arm64 -t "$REGISTRY$package:$version" --build-arg REGISTRY="$REGISTRY" --build-arg PACKAGE="$package" -f ../../../build/docker/Dockerfile-build . --push
+  cd ../../../ || exit
 done

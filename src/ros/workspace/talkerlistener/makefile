@@ -7,6 +7,7 @@ rosbuild: deps
 	colcon build --packages-select $(package)
 
 run: cleanup rosbuild
+# When running in a container, you can set TALKER_LISTENER_ROS_SECURITY_ENCLAVE_OVERRIDE env variable to point to the mounted enclave.
 	@if [ -z $(action) ]; then\
 		echo "please give pass action type (listener/talker). e.g. make run action=listener";\
 		echo "defaulting to listener";\
@@ -44,5 +45,6 @@ test: rosbuild
 	sudo mkdir -p /test-results
 	sudo cp build/$(package)/pytest.xml /test-results/result-$(package).xml
 	sudo cp build/$(package)/coverage.xml /test-results/coverage-$(package).xml
-	echo "returning test result code"
+	echo "returning test result exit code"
+# make sure colcon test-result is the last command. It returns the exit code used by the CI pipeline.
 	colcon test-result

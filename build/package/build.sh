@@ -9,6 +9,6 @@ packages=$(ls src/ros/workspace)
 for package in $packages; do
   echo "Building $package"
   cd src/ros/workspace || exit
-  docker build -t "$package:$version" --build-arg PACKAGE="$package" -f ../docker/Dockerfile-build .
-  cd .. || exit
+  docker build -t "$package:$version" --build-arg PACKAGE="$package" -f ../../../build/docker/Dockerfile-build .
+  cd ../../../ || exit
 done
