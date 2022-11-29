@@ -14,10 +14,14 @@
         "seccomp=unconfined",
         "--network=host",
         "--privileged",
+        "--ipc=host",
         "-e", "DISPLAY=${env:DISPLAY}",
 		"-e", "WAYLAND_DISPLAY=${env:WAYLAND_DISPLAY}",
 		"-e", "XDG_RUNTIME_DIR=${env:XDG_RUNTIME_DIR}",
-        "--ipc=host"
+        "-e", "PULSE_SERVER=${env:PULSE_SERVER}",
+        // "-v", "/tmp/.X11-unix:/tmp/.X11-unix",
+        // "-v", "/mnt/wslg:/mnt/wslg",
+        "-v", "/dev/shm:/dev/shm"
     ],
     "remoteEnv": {
         "HOST_PROJECT_PATH": "${localWorkspaceFolder}"
@@ -62,11 +66,11 @@
 	"remoteUser": "vscode",
 	"features": {
 		"docker-from-docker": "latest",
-		"kubectl-helm-minikube": {
-			"version": "latest",
-			"helm": "latest",
-			"minikube": "none"
-		},
+		// "kubectl-helm-minikube": {
+		// 	"version": "latest",
+		// 	"helm": "latest",
+		// 	"minikube": "none"
+		// },
 		"git": "os-provided"
 	},
 	"mounts": [
