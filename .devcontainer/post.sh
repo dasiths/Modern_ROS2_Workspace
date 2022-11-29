@@ -42,4 +42,4 @@ sudo apt install tcpdump
 set +x
 
 # Create ROS development keystore and enclaves
-bash -c "cd /workspaces/Modern_ROS2_Workspace/.ros_security && source /opt/ros/humble/setup.bash && export ROS_VERSION=2 && ./create-demo-keystore.sh"
+bash -c "cd ./.ros_security/ && source /opt/ros/humble/setup.bash && export ROS_VERSION=2 && ./create-demo-keystore.sh"
