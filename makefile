@@ -36,3 +36,12 @@ ifndef REGISTRY
 else
 	./build/package/push.sh $(REGISTRY) $(version)
 endif
+
+# The ports in use are listed here
+# - https://docs.ros.org/en/humble/Concepts/About-Domain-ID.html#domain-id-to-udp-port-calculator
+# - http://docs.ros.org/en/rolling/Tutorials/Advanced/Security/Examine-Traffic.html#display-encrypted-discovery-packets
+inspect-discovery-packets:
+	sudo tcpdump -X -i any udp port 7400
+
+inspect-data-packets:
+	sudo tcpdump -i any -X udp portrange 7401-7500
